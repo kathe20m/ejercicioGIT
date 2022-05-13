@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Taller Hotmart Serie de numero  Fibonacci</title>
+</head>
+ 
+<body> 
+    <script>    
+    function serieFibonacci(numero)
+    {
+        let arrayFibonacci=[0,1];
+        for (let i = 2; i < numero; i++) {
+            arrayFibonacci[i] = arrayFibonacci[i - 2] + arrayFibonacci[i - 1];
+        }
+        return arrayFibonacci;
+    }     
+    let numeroDeElementos = serieFibonacci(6);
+    document.write("La serie es : " + numeroDeElementos); 
+    console.log(numeroDeElementos);
+    </script> 
+</body>
+</html>

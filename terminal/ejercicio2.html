@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Taller Hotmart Serie de numero  Fibonacci</title>
+</head>
+ 
+<body> 
+    <script>    
+   function ordenamiento(arrayOrdenar) {
+    let bandera = false;
+    while (!bandera) {
+        bandera = true;
+      for (let i = 1; i < arrayOrdenar.length; i += 1) {
+        if (arrayOrdenar[i - 1] < arrayOrdenar[i]) {
+            bandera = false;
+            let tmp = arrayOrdenar[i - 1];
+            arrayOrdenar[i - 1] = arrayOrdenar[i];
+            arrayOrdenar[i] = tmp;
+          console.log(arrayOrdenar[i]);
+        }
+      }
+    }  
+    return arrayOrdenar;
+  }
+  
+  let inicio = [3, 0, 63, 15, 25, 30, 22, 99];
+
+  document.write("el arreglo sin ordenar es  " + inicio); 
+  document.write("<br></br>"); 
+  document.write("el arreglo ordenado es  " + ordenamiento(inicio)); 
+  console.log("el arreglo sin ordenar es  " + inicio);  
+  console.log("el arreglo ordenado es  " + ordenamiento(inicio));
+</script> 
+</body>
+</html>
+
+
+
+
