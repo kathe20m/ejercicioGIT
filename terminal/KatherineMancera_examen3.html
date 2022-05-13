@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Examen 3 - ciclos </title>
+</head>
+
+<body>
+    <p id="examen3"></p>
+    <script>
+        let array1 = [3, 2, 1, 1, 2, 3, 2, 3, 1];
+        let array2 = [1, 1, 2, 2, 1, 1, 1, 2, 1];
+        let multiplicar;
+        let sumar;
+
+        function calculo() {
+            for (i = 0; i < array1.length; i++) {
+                for (j = 0; j < array2.length; j++) {
+                    let multiplicar = array1[i] * array2[j];
+                    let sumar = array1[i] + array2[j];
+                    console.log(array1[i] + " X" + array2[j] + " = " + multiplicar);
+                    console.log(array1[i] + " +" + array2[j] + " = " + sumar);                  
+
+                }
+            }
+        }
+        console.log(calculo());        
+    </script>
+</body>
+
+</html>

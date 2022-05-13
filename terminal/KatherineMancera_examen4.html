@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Examen 3 - ciclos </title>
+</head>
+
+<body>
+    <p id="examen4"></p>
+    <script>
+        class Persona {
+            nombre;
+            apellido;
+            edad;
+
+            constructor(nombre, apellido, edad) {
+                this.nombre = nombre;
+                this.apellido = apellido;
+                this.edad = edad;
+
+            }
+            getDetalles() {
+                console.log("mi nombre es:  " + this.nombre + " mi apellido es: " + this.apellido + " y tengo " + this.edad + " años");
+            }
+        }
+
+        class Empleado extends Persona {
+            tipo;
+            constructor(nombre,apellido,edad,tipo) {
+                super(nombre,apellido,edad);
+                this.tipo= tipo;                
+            }
+            getDetalles() {
+                super.getDetalles();
+                console.log("tipo de empleado" + this.tipo);
+            }
+        }
+
+        class Nomina extends Empleado{
+            dias;            
+            salario;
+            valorHoraConfianza=500;
+            valorHoraSindicato=200;
+            descuentoConfianza=0.13;
+            descuentoSindicato=0.10;
+
+            arrayEmpleado= new Persona();
+
+                      
+            constructor(nombre,apellido,edad,tipo,dias){
+                super(nombre,apellido,edad,tipo);
+                this.dias=dias;                           
+            }
+            
+            calcularPago(){
+                if(this.tipo=="Confianza"){
+                    this.salario=this.valorHoraConfianza*this.dias;
+                    this.salario=this.salario-this.salario*this.descuentoConfianza;
+                    console.log("el salario es : "+ this.salario);
+                } else if(this.tipo=="Sindicato"){
+                    this.salario=this.valorHoraSindicato*this.dias;
+                    this.salario=this.salario-this.salario*this.descuentoSindicato;
+                    console.log("el salario es : "+ this.salario);
+                }
+            }
+        }
+        
+        const n = new Nomina("kathe", "Mancera", "37", "Sindicato",16);    
+        n.getDetalles();
+        n.calcularPago();
+    </script>
+
+
+</body>
+
+</html>
